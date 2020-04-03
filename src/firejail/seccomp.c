@@ -339,7 +339,7 @@ int seccomp_filter_keep(bool native) {
 
 	// build the seccomp filter as a regular user
 	int rv = sbox_run(SBOX_USER | SBOX_CAPS_NONE | SBOX_SECCOMP, 5,
-		 PATH_FSECCOMP, "keep", filter, postexec_filter, list);
+		 PATH_FSECCOMP, command, filter, postexec_filter, list);
 
 	if (rv) {
 		fprintf(stderr, "Error: cannot configure seccomp filter\n");
